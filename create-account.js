@@ -27,6 +27,14 @@ function createAccount(pin, amount = 0) {
         return "Invalid PIN.";
       }
     },
+    changePin(code, newCode) {
+      if (code === pin) {
+        pin = newCode;
+        return "PIN successfully changed!";
+      } else {
+        return "Invalid PIN.";
+      }
+    },
   };
 }
 
