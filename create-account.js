@@ -15,6 +15,18 @@ function createAccount(pin, amount = 0) {
         return "Invalid PIN.";
       }
     },
+    withdraw(code, amt) {
+      if (code === pin) {
+        if (amt <= amount) {
+          amount -= amt;
+          return `Succesfully withdrew $${amt}. Current balance: $${amount}.`;
+        } else if (amt >= amount) {
+          return "Withdrawal amount exceeds account balance. Transaction cancelled.";
+        }
+      } else {
+        return "Invalid PIN.";
+      }
+    },
   };
 }
 
